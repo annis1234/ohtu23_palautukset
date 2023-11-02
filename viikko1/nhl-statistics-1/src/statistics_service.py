@@ -1,4 +1,3 @@
-from player_reader import PlayerReader
 
 
 def sort_by_points(player):
@@ -6,10 +5,9 @@ def sort_by_points(player):
 
 
 class StatisticsService:
-    def __init__(self):
-        reader = PlayerReader()
-
-        self._players = reader.get_players()
+    def __init__(self, reader):
+        self._reader = reader
+        self._players = self._reader.get_players()
 
     def search(self, name):
         for player in self._players:
