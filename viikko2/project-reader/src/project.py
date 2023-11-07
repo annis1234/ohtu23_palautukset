@@ -1,10 +1,10 @@
 class Project:
-    def __init__(self, name, description, lic, authors, dependencies, dev_dependencies):
+    def __init__(self, name, description, license, authors, dependencies, dev_dependencies):
         self.name = name
         self.description = description
         self.dependencies = dependencies
         self.dev_dependencies = dev_dependencies
-        self.license = lic
+        self.license = license
         self.authors = authors
 
     def _stringify_lists(self, dependencies):
@@ -20,5 +20,5 @@ class Project:
             f"\n"
             f"\nDependencies:\n- {self._stringify_lists(self.dependencies)}"
             f"\n"
-            f"\nDevelopment dependencies: {self._stringify_lists(self.dev_dependencies)}"
+            f"\nDevelopment dependencies:\n- {self._stringify_lists(self.dev_dependencies)}"
         )

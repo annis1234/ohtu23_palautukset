@@ -2,7 +2,6 @@ from urllib import request
 from project import Project
 import tomlkit
 
-
 class ProjectReader:
     def __init__(self, url):
         self._url = url
@@ -10,27 +9,23 @@ class ProjectReader:
     def get_project(self):
         # tiedoston merkkijonomuotoinen sisältö
         content = request.urlopen(self._url).read().decode("utf-8")
-        #print(content)
 
-        dic = tomlkit.loads(content)
-        print(dic)
+        project_info = tomlkit.loads(content)
 
-        name = dic['tool']['poetry']['name']
-        description = dic['tool']['poetry']['description']
+        name = project_info['tool']['poetry']['name']
+        description = project_info['tool']['poetry']['description']
 
-        lic = dic['tool']['poetry']['license']
+        license = project_info['tool']['poetry']['license']
 
-        authors = dic['tool']['poetry']['authors']
+        authors = project_info['tool']['poetry']['authors']
 
-        dependencies = dic['tool']['poetry']['dependencies']
-        keys_dep = [key for key in dependencies.keys()]
+        dependencies= project_info['tool']['poetry']['dependencies']
+        dependencies_names = [key for key in dependencies.keys()]
 
-        dev_dependencies = dic['tool']['poetry']['group']['dev']['dependencies']
-        keys_dev = [key for key in dev_dependencies.keys()]
+        dev_dependencies = project_info['tool']['poetry']['group']['dev']['dependencies']
+        dev_dependencies_names = [key for key in dev_dependencies.keys()]
 
-        project = Project(name, description, lic, authors, keys_dep, keys_dev)
-
-        # deserialisoi TOML-formaatissa oleva merkkijono ja muodosta Project-olio sen tietojen perusteella
+        project = Project(name, description, license, authors, dependencies_names, dev_dependencies_names)
 
         return project
         
