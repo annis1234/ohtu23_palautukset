@@ -74,8 +74,3 @@ Registration Should Fail With Message
     [Arguments]    ${message}
     Register Page Should Be Open
     Page Should Contain    ${message}
-
-# Go To Register Page And Create User
-    #    Create User    testi    testi123
- #    Go To Register Page
- #    Register Page Should Be Open
