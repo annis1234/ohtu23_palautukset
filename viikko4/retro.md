@@ -9,4 +9,4 @@ noin 10-25 minuuttia.
 Glad, Sad, Mad-tekniikassa jokainen osallistuja kirjoittaa ylös havaintojaan sprinttiin liittyen. Havainnot voivat olla
 positiivisia tai negatiivisia, ja ne jaotellaan otsikoiden "Glad", "Sad", ja "Mad" alle. Lopuksi ajatukset ryhmitellään
 yhdistävän teeman mukaisesti, ja osallistujat äänestävät, missä järjestyksessä teemat käydään läpi. Puheenjohtaja johtaa
-keskustelua, jonka tavoitteena on keskittyä tulevan sprintin toimintatapoihin. Keskustelun enimmäispituus on 1 tunti.
+keskustelua, jonka tavoitteena on keskittyä tulevan sprintin toimintatapoihin. Keskustelun enimmäispituus on yksi tunti.
